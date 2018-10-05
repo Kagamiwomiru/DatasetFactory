@@ -82,7 +82,7 @@ $ python GetPoint.py 画像があるディレクトリ
 ウインドウの"X"をクリックすると次の画像に遷移します。すべての画像の設定が終わるとプログラムが終了します。
 
 
-![docs_imgs/zahyo.png]()
+![docs_imgs/zahyo.png](docs_imgs/zahyo.png)
 
 **xdata**と**ydata**が座標です。この値をGetPoint.csvに入力します。
 
