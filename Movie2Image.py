@@ -1,4 +1,5 @@
 # coding: utf-8
+#Copyright (c) 2018  Shotaro Ishigami
 # # 動画から画像を作ります。
 # 引数で画像の生成頻度を変更できます。（X秒毎)
 import cv2

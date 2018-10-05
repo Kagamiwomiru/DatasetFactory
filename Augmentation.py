@@ -1,4 +1,5 @@
 # coding: utf-8
+#Copyright (c) 2018  Shotaro Ishigami
 #作成した画像を更に増やします。
 
 from Union import *

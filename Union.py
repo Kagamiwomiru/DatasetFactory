@@ -1,4 +1,5 @@
 # coding: utf-8
+#Copyright (c) 2018  Shotaro Ishigami
 # 画像を合成します。
 from UnionKit import *
 import csv

@@ -1,4 +1,6 @@
 # coding: utf-8
+#Copyright (c) 2018  Shotaro Ishigami
+
 import cv2
 import numpy as np
 import random

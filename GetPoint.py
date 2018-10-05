@@ -1,4 +1,5 @@
 # coding: utf-8
+#Copyright (c) 2018  Shotaro Ishigami
 #クリックした場所の座標を表示します。
 import matplotlib
 matplotlib.use('TkAgg')
