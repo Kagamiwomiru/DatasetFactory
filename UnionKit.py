@@ -210,13 +210,6 @@ def LensFilter(img,color,scale):
     return img
 
 
-
-
-
-
-
-
-
 # セピア変換
 def Sepia(im):
     b, g, r = im[:,:,0],im[:,:,1], im[:,:,2]
@@ -305,5 +298,56 @@ def Dise(w,h):
     ColorB=random.randint(0,254)
     return ShieldType,FillOption,startX,startY,ColorR,ColorG,ColorB  
 
+# 画像反転
+def flip_img(tar=None,flips=2):
+    if not flips in [1,0,-1]:
+        return tar
+    img = cv2.flip(tar, flips)    
+    return img
 
+
+# ガウシアンノイズ
+def gauss_noise(tar=None,mean=0,sigma=15):
+    row,col,ch= tar.shape
+    gauss = np.random.normal(mean,sigma,(row,col,ch))
+    gauss = gauss.reshape(row,col,ch)
+    gauss_img = tar + gauss
+    
+    gauss_img=gauss_img.astype("int")
+    gauss_img=np.asarray(gauss_img)
+    return gauss_img
+
+# ソルト&ペッパノイズ
+def salt_and_pepper(tar=None, amount=0.,sp_ratio=0.5):
+    #tar=np.asarray(tar)
+    sp_img = tar.copy()
+    #print(tar)
+    # 塩モード
+    num_salt = np.ceil(amount * tar.size * sp_ratio)
+    coords = [np.random.randint(0, i-1 , int(num_salt)) for i in tar.shape]
+    #print(coords[:-1])
+    sp_img[coords[:-1]] = (255,255,255)
+
+    # 胡椒モード
+    num_pepper = np.ceil(amount* tar.size * (1. - sp_ratio))
+    coords = [np.random.randint(0, i-1 , int(num_pepper)) for i in tar.shape]
+    sp_img[coords[:-1]] = (0,0,0)
+    
+    return sp_img
+
+# 量子化クラスタリング
+def cluster(tar=None,kernel=256):
+    cluster_img = tar.reshape((-1,3))
+    # convert to np.float32
+    cluster_img = np.float32(cluster_img)
+
+    # define criteria, number of clusters(K) and apply kmeans()
+    criteria = (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 10, 1.0)
+    ret,label,center=cv2.kmeans(cluster_img,kernel,None,criteria,10,cv2.KMEANS_RANDOM_CENTERS)
+
+    # Now convert back into uint8, and make original image
+    center = np.uint8(center)
+    result = center[label.flatten()]
+    result = result.reshape((tar.shape))
+    return result
 
