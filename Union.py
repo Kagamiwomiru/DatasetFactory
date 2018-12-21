@@ -11,6 +11,7 @@ import cv2
 #これより下の引数は省略できます。
 #SharpBackground：背景を鮮鋭化するか
 #Brightness_mode：明るさを変更する方法を選択(No,PIL,OpenCV)
+#Extraction_mode : 前景抽出方法を選択(No,Color,Binary)
 #dilate,erode：クロージング時の拡大率と縮小率
 #X,Y：前景画像の貼り付け位置（途中の処理で前景画像をリサイズするのでその後の貼り付け位置）
 #resize：前景画像を倍数指定でリサイズします
@@ -21,6 +22,12 @@ import cv2
 #GausianFilter：ガウシアンフィルタ
 #HideNum：遮蔽物の数
 #x1_Ho,y1_Ho,x2_Ho,y2_Ho=,x3_Ho,y3_Ho,x4_Ho,y4_Ho：射影変換。
+#flips : 反転(0:上下反転, 1:左右反転, -1:上下左右反転)
+#amount : ソルト&ペッパにおける画像の中のノイズの割合
+#sp_ratio : ソルト&ペッパの塩と胡椒の割合
+#mean : ガウシアンフィルタにおける平均
+#sigma : ガウシアンフィルタにおける分散
+#kernel : 量子化するときのくくりの数値(つまりは何色で表示にするか)
 
 def Union(label_name="?",
          bak=None,
@@ -28,6 +35,7 @@ def Union(label_name="?",
          SharpBackground=False,
          SepiaAll=False,
          Brightness_mode="No",
+         Extraction_mode="No",
          dilate=0,erode=0,
          X=0,Y=0,
          angle=0,
@@ -38,7 +46,12 @@ def Union(label_name="?",
          BilateralFilter=1,
          GausianFilter=1,
          HideNum=0,
-         x1_Ho=0,y1_Ho=0,x2_Ho=0,y2_Ho=0,x3_Ho=0,y3_Ho=0,x4_Ho=0,y4_Ho=0
+         x1_Ho=0,y1_Ho=0,x2_Ho=0,y2_Ho=0,x3_Ho=0,y3_Ho=0,x4_Ho=0,y4_Ho=0,
+         flips=2,
+         amount=0.,
+         sp_ratio=0.5,
+         mean=0,
+         sigma=0
          ):
     
     if(SharpBackground is True):
@@ -59,13 +72,17 @@ def Union(label_name="?",
     target.save("./tmp/tmp_ex.png")    
     #PILからOpenCVへ変換
     target = cv2.cvtColor(np.array(target),cv2.COLOR_BGR2RGB)   
-    
+        
+    # ターゲットを反転
+    target=flip_img(tar=target,flips=flips)
+
     #バイラテラルぼかし
     target=BilateralBlur(img=target,cnt=BilateralFilter)
     
-    #前景画像の抽出
-    target_ex=Extraction_color(tar=target,dilate=dilate, erode=erode,B=B,G=G,R=R)
-
+    # 前景抽出選択
+    target=Extraction(tar=target,dilate=dilate, erode=erode,B=B,G=G,R=R,Threshold=Threshold, Extraction_mode=Extraction_mode)
+    cv2.imwrite("./tmp/tmp.png",target)    
+        
     cv2.imwrite("./tmp/tmp.png",target_ex)
     #ホモグラフィー変換
 
@@ -119,6 +136,18 @@ def Union(label_name="?",
     
     out_image=PasteTarget(x=X,y=Y,background=background)#画像の貼り付け
     out_image.save("./tmp/result.png")
+
+    # 量子化クラスタリング
+    cluster_img=cluster(tar= cv2.imread("./tmp/result.png"),kernel=kernel)
+    cv2.imwrite("./tmp/result.png",cluster_img)
+
+    # ソルト&ペッパー
+    sp_image=salt_and_pepper(tar= cv2.imread("./tmp/result.png"), amount=amount,sp_ratio=sp_ratio)
+
+    # ガウシアンノイズ
+    gauss_image=gauss_noise(tar=sp_image,mean=mean,sigma=sigma)
+    cv2.imwrite("./tmp/result.png",gauss_image)
+    
     
     if(SepiaAll is True):
         SepiaImage=Sepia(cv2.imread("./tmp/result.png"))
