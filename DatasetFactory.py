@@ -85,7 +85,10 @@ def main(_):
                 label_name=LABEL ,
                 bak=BACKGROUND_DIR+str(data[i][0]),tar=image,
                 X=X,Y=Y,
-                resize=resize
+                resize=1,
+                dilate=5,
+                erode=5,
+                Extraction_mode="Binary",
                 )
             #アノテーションファイルに記録
             with open(ANNOTATION_FILE,"a") as f:

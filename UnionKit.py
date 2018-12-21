@@ -47,6 +47,31 @@ def ImageTrim(img):
     except NameError:
         return None
 
+# 抽出モードによって抽出手法を変更します。
+def Extraction(Extraction_mode=None,
+                        Threshold=None,
+                        tar=None,
+                        dilate=None,
+                        erode=None,
+                        B=None,G=None,R=None,
+              ):
+    
+    if(Extraction_mode=="Binary"):
+        print("Binary")
+        #2値化による輪郭抽出
+        th1=Binarize(Threshold,tar)
+        MakeMask(th1,dilate,erode)
+        mask=Image.open("./tmp/mask.png")
+        tar=Image.fromarray(tar)
+        tar.putalpha(mask)
+        tar=np.asarray(tar)
+       
+
+    elif Extraction_mode=="Color":
+        tar=Extraction_color(B,G,R,tar,dilate=dilate,erode=erode)# 色指定による輪郭抽出（BGR)
+        
+       
+    return tar
 
 #輪郭抽出（色）
 def Extraction_color(B,G,R,tar,dilate=0,erode=0):
@@ -82,7 +107,7 @@ def MakeMask(th1,dilate=0,erode=0):
     mask_img=255-th1
     mask_img=Closing(mask_img,dilate=dilate,erode=erode)
     cv2.imwrite("./tmp/mask.png",mask_img)
-
+    cv2.imwrite("./mask.png",mask_img)
     
 def PasteTarget(x=0,y=0,background=None,mask=None):
     target=Image.open("./tmp/tmp.png").convert("RGBA")

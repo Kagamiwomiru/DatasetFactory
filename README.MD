@@ -10,7 +10,7 @@ DatasetFactoryは前景画像と背景画像を合成することで画像枚数
 - 背景、前景画像ともにjpgしか受け付けない問題
     - pngに対応させたい
 - DatasetFactory.pyのoutput_dirオプションを省略したときに生成されるアノテーションファイルの中身の"ファイルパス"が相対パスになっている問題
-- KizunaAIでテストすると中身がすっかすかでした。
+
 
 # ファイル構成
 <dl>
@@ -113,7 +113,7 @@ python DatasetFactory.py -h
 <br>
 
 ### 実行例 
-クラス名をKizunaAI, ラベルを1, アノテーションファイルをannotation.csvとし, アノテーションファイルを初期化とすると以下のように実行します。
+クラス名をCar, ラベルを1, アノテーションファイルをannotation.csvとし, アノテーションファイルを初期化とすると以下のように実行します。
 ```
 python DatasetFactory.py --Background_dir=./Background/ \
                          --Output_dir=./Output/ \
@@ -121,7 +121,7 @@ python DatasetFactory.py --Background_dir=./Background/ \
                          --annotation_file=annotation.csv \
                          --init=true \
                          --label=1 \
-                         --name=KizunaAI \
+                         --name=Car \
                          --recipe_file=GetPoint.csv
 ```
 実行すると以下の形式でcsvに保存されます。<br>
@@ -158,7 +158,7 @@ python DatasetFactory.py --Background_dir=./Background/ \
 
 ### 実装例
 ```python
-# ラベルIDを1,背景画像をbackground.jpgに、前景画像をKizunaAI.jpgに、前景画像を設置する座標を(150,200)に、前景画像サイズを２倍にして合成する。
+# ラベルIDを1,背景画像をbackground.jpgに、前景画像をCar.jpgに、前景画像を設置する座標を(150,200)に、前景画像サイズを２倍にして合成する。
 
 from Union import *
 from PIL import Image
@@ -166,7 +166,7 @@ from PIL import Image
 out,tar_h,tar_w=Union(
                 label_name=1 ,
                 bak="~/dataset/background.jpg",
-                tar="~/dataset/KizunaAI.jpg",
+                tar="~/dataset/Car.jpg",
                 X=150,Y=200,
                 resize=2
                 )

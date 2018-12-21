@@ -28,6 +28,7 @@ def Union(label_name="?",
          SharpBackground=False,
          SepiaAll=False,
          Brightness_mode="No",
+         Extraction_mode="No",
          dilate=0,erode=0,
          X=0,Y=0,
          angle=0,
@@ -56,17 +57,19 @@ def Union(label_name="?",
     
     #前景画像を拡張
     target=img_expansion(target,resize,w,h)
-    target.save("./tmp/tmp_ex.png")    
+    # target.save("./tmp/tmp_ex.png")    
     #PILからOpenCVへ変換
     target = cv2.cvtColor(np.array(target),cv2.COLOR_BGR2RGB)   
     
     #バイラテラルぼかし
     target=BilateralBlur(img=target,cnt=BilateralFilter)
+    cv2.imwrite("./tmp/tmp.png",target)
     
     #前景画像の抽出
-    target_ex=Extraction_color(tar=target,dilate=dilate, erode=erode,B=B,G=G,R=R)
-
-    cv2.imwrite("./tmp/tmp.png",target_ex)
+    target=cv2.imread("./tmp/tmp.png",-1)
+    target=Extraction(tar=target,dilate=dilate, erode=erode,B=B,G=G,R=R,Threshold=Threshold, Extraction_mode=Extraction_mode)
+    cv2.imwrite("./tmp/tmp.png",target)
+    cv2.imwrite("./hoge.png",target)
     #ホモグラフィー変換
 
     target=Homography(cv2.imread("./tmp/tmp.png",-1),tar_w=tar_w,tar_h=tar_h,
@@ -98,9 +101,10 @@ def Union(label_name="?",
     tar_h,tar_w,_=target.shape[:3]
    
     # リサイズ
-    tar_raito=float(resize)/org_w 
+    # tar_raito=float(resize)/org_w 
     
-    target=cv2.resize(target,(resize,int(tar_h*tar_raito)))
+    # target=cv2.resize(target,(resize,int(tar_h*tar_raito)))
+    target=cv2.resize(target,(int(tar_w*resize),int(tar_h*resize)))
     cv2.imwrite("./tmp/tmp.png",target)
     tar_h,tar_w,_=target.shape[:3]
 
