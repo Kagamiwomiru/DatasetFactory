@@ -7,6 +7,7 @@ import sys
 import random
 import os
 import shutil
+#from configparser import ConfigParser
 import tensorflow as tf
 #コマンドライン引数
 flags = tf.app.flags
@@ -56,6 +57,11 @@ def main(_):
     if(os.path.exists(ANNOTATION_FILE) and ( INIT is "true" or INIT is "True")):
         os.remove(ANNOTATION_FILE)
 
+    """
+#DetasetFactoryの設定ファイル読み込み
+    config=ConfigParser()
+    config.read('./dataset.ini',encoding='utf-8')
+    """
 #処理
     cnt=0
     for i in range(1,len(data)):
