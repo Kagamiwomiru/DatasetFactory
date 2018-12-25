@@ -41,7 +41,7 @@ def Union(label_name="?",
          angle=0,
          resize=1,
          R=248,G=248,B=248,
-         Threshold=248,
+         Threshold=200,
          brightness=1.0,
          BilateralFilter=1,
          GausianFilter=1,
@@ -51,7 +51,8 @@ def Union(label_name="?",
          amount=0.,
          sp_ratio=0.5,
          mean=0,
-         sigma=0
+         sigma=0,
+         kernel=256
          ):
     
     if(SharpBackground is True):
@@ -79,20 +80,12 @@ def Union(label_name="?",
     #バイラテラルぼかし
     target=BilateralBlur(img=target,cnt=BilateralFilter)
     cv2.imwrite("./tmp/tmp.png",target)
-    
-<<<<<<< HEAD
-    #前景画像の抽出
-    target=cv2.imread("./tmp/tmp.png",-1)
-    target=Extraction(tar=target,dilate=dilate, erode=erode,B=B,G=G,R=R,Threshold=Threshold, Extraction_mode=Extraction_mode)
-    cv2.imwrite("./tmp/tmp.png",target)
-    cv2.imwrite("./hoge.png",target)
-=======
+
     # 前景抽出選択
     target=Extraction(tar=target,dilate=dilate, erode=erode,B=B,G=G,R=R,Threshold=Threshold, Extraction_mode=Extraction_mode)
     cv2.imwrite("./tmp/tmp.png",target)    
         
-    cv2.imwrite("./tmp/tmp.png",target_ex)
->>>>>>> 7fa2f317b3175df700bf50da7efd83f2589f73e9
+
     #ホモグラフィー変換
 
     target=Homography(cv2.imread("./tmp/tmp.png",-1),tar_w=tar_w,tar_h=tar_h,
