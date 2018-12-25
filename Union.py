@@ -52,7 +52,7 @@ def Union(label_name="?",
          sp_ratio=0.5,
          mean=0,
          sigma=0,
-         kernel=256
+         kernel=-1
          ):
     
     if(SharpBackground is True):
@@ -141,14 +141,17 @@ def Union(label_name="?",
     out_image.save("./tmp/result.png")
 
     # 量子化クラスタリング
-    cluster_img=cluster(tar= cv2.imread("./tmp/result.png"),kernel=kernel)
-    cv2.imwrite("./tmp/result.png",cluster_img)
+    if not (kernel==-1):
+        cluster_img=cluster(tar= cv2.imread("./tmp/result.png"),kernel=kernel)
+        cv2.imwrite("./tmp/result.png",cluster_img)
 
     # ソルト&ペッパー
-    sp_image=salt_and_pepper(tar= cv2.imread("./tmp/result.png"), amount=amount,sp_ratio=sp_ratio)
+    if not (amount==0):
+        sp_image=salt_and_pepper(tar= cv2.imread("./tmp/result.png"), amount=amount,sp_ratio=sp_ratio)
+        cv2.imwrite("./tmp/result.png",sp_image)
 
     # ガウシアンノイズ
-    gauss_image=gauss_noise(tar=sp_image,mean=mean,sigma=sigma)
+    gauss_image=gauss_noise(tar=cv2.imread("./tmp/result.png"),mean=mean,sigma=sigma)
     cv2.imwrite("./tmp/result.png",gauss_image)
     
     

@@ -19,6 +19,7 @@ flags.DEFINE_string('Background_dir','./Background/','背景画像が入った�
 flags.DEFINE_string('Target_dir','./Target/','前景画像が入ったディレクトリ')
 flags.DEFINE_string('Output_dir','./Output/','出力ディレクトリ')
 flags.DEFINE_string('name','???','クラス名(cat,dog,など)')
+flags.DEFINE_string('config','./dataset.csv','合成方法の設定ファイル')
 
 FLAGS = flags.FLAGS
 
@@ -33,6 +34,7 @@ def main(_):
     ANNOTATION_FILE=FLAGS.annotation_file
     INIT=FLAGS.init
     NAME=FLAGS.name
+    CONFIG=FLAGS.config
 
     RESIZE_RATE=8 #背景画像の幅サイズの何分の１にするか
     data=csv_read(RECIPE,"utf-8")
@@ -56,6 +58,12 @@ def main(_):
     if(os.path.exists(ANNOTATION_FILE) and ( INIT is "true" or INIT is "True")):
         os.remove(ANNOTATION_FILE)
 
+    
+#DetasetFactoryの設定ファイル読み込み
+    config=csv_read(CONFIG,"utf-8")
+    config_rows={row[0]:row[1:] for row in config[1:]}
+    
+
 #処理
     cnt=0
     for i in range(1,len(data)):
@@ -64,7 +72,20 @@ def main(_):
         for image in glob.glob(TARGET_DIR+"*"):
             img=Image.open(image) 
             image_w,image_h=img.size
- 
+
+            if os.path.basename(image) in config_rows:
+                SharpBackground,SepiaAll,Brightness_mode,Extraction_mode, \
+                dilate,erode,angle,R,G,B,Threshold,brightness,BilateralFilter, \
+                GausianFilter,HideNum,x1_Ho,y1_Ho,x2_Ho,y2_Ho,x3_Ho,y3_Ho,x4_Ho,y4_Ho, \
+                flips,amount,sp_ratio,mean,sigma,kernel=config_rows[os.path.basename(image)]
+
+            else:
+                SharpBackground,SepiaAll,Brightness_mode,Extraction_mode, \
+                dilate,erode,angle,R,G,B,Threshold,brightness,BilateralFilter, \
+                GausianFilter,HideNum,x1_Ho,y1_Ho,x2_Ho,y2_Ho,x3_Ho,y3_Ho,x4_Ho,y4_Ho, \
+                flips,amount,sp_ratio,mean,sigma,kernel=config_rows["default"]
+
+            print(kernel)
             #横幅のサイズを再設定(高さ自動で調整される)
             resize=-1*(-1*bak_w//RESIZE_RATE) #切り上げ割り算
             tar_raito=float(resize)/image_w 
@@ -82,13 +103,29 @@ def main(_):
     
             #合成開始
             out,tar_h,tar_w=Union(
-                label_name=LABEL ,
+                label_name=LABEL,
                 bak=BACKGROUND_DIR+str(data[i][0]),tar=image,
                 X=X,Y=Y,
-                resize=1,
-                dilate=5,
-                erode=5,
-                Extraction_mode="Binary",
+                resize=2,
+                SharpBackground=bool(int(SharpBackground)),
+                SepiaAll=bool(int(SepiaAll)),
+                Brightness_mode=str(Brightness_mode),
+                Extraction_mode=str(Extraction_mode),
+                dilate=int(dilate),erode=int(erode),
+                angle=int(angle),
+                R=int(R),G=int(G),B=int(B),
+                Threshold=int(Threshold),
+                brightness=float(brightness),
+                BilateralFilter=int(BilateralFilter),
+                GausianFilter=int(GausianFilter),
+                HideNum=int(HideNum),
+                x1_Ho=int(x1_Ho),y1_Ho=int(y1_Ho),x2_Ho=int(x2_Ho),y2_Ho=int(y2_Ho),x3_Ho=int(x3_Ho),y3_Ho=int(y3_Ho),x4_Ho=int(x4_Ho),y4_Ho=int(y4_Ho),
+                flips=int(flips),
+                amount=float(amount),
+                sp_ratio=float(sp_ratio),
+                mean=int(mean),
+                sigma=int(sigma),
+                kernel=int(kernel)
                 )
             #アノテーションファイルに記録
             with open(ANNOTATION_FILE,"a") as f:
