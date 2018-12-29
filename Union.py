@@ -14,6 +14,7 @@ import cv2
 #Extraction_mode : 前景抽出方法を選択(No,Color,Binary)
 #dilate,erode：クロージング時の拡大率と縮小率
 #X,Y：前景画像の貼り付け位置（途中の処理で前景画像をリサイズするのでその後の貼り付け位置）
+#Random_rotation : 画像をランダムで回転させるか
 #resize：前景画像を倍数指定でリサイズします
 #R,G,B：切り抜かれる色を指定(0〜255）
 #Threshold：２値化のの際の閾値（輪郭抽出）
@@ -38,6 +39,7 @@ def Union(label_name="?",
          Extraction_mode="No",
          dilate=0,erode=0,
          X=0,Y=0,
+         Random_rotation=False,
          angle=0,
          resize=1,
          R=248,G=248,B=248,
@@ -91,9 +93,12 @@ def Union(label_name="?",
     target=Homography(cv2.imread("./tmp/tmp.png",-1),tar_w=tar_w,tar_h=tar_h,
                           x1=x1_Ho,y1=y1_Ho,x2=x2_Ho,y2=y2_Ho,x3=x3_Ho,y3=y3_Ho,x4=x4_Ho,y4=y4_Ho)
 
-    #アフィン回転
-    target=Affine(target,angle)
-    
+    #アフィン回転(ランダムで回転させるか)
+    if Random_rotation:
+        target=Affine(target,random.randint(0,360))
+    else:
+        target=Affine(target,angle)
+
     #トリミング
     target=ImageTrim(target)
     cv2.imwrite("./tmp/tmp.png",target)
