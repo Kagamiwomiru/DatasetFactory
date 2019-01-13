@@ -13,27 +13,13 @@ import sys,csv,os
 args=sys.argv
 
 FLAG=False
-resize_width=600 #横幅600pxにリサイズ
 
 if(len(args) != 2):
     print( "ディレクトリを指定してください。")
     print ("例:~/Background/")
     sys.exit()
 
-
-
-files=glob.glob(args[1]+"*.jpg")
-print("全ての背景画像を"+str(resize_width)+"pxにリサイズ中...")
-for f in files:
-    img=Image.open(f)
-    resize_rate=float(resize_width)/img.width
-    # print(resize_rate) 
-
-    img_resize = img.resize((int(img.width*resize_rate), int(img.height*resize_rate)))
-    img_resize.save(f)
-
-
-with open('./GetPoint.csv', 'w') as f:
+with open('./Getpoint.csv', 'w') as f:
         writer = csv.writer(f)
         writer.writerow(['filename','xmin','ymin','xmax','ymax'])   
 
@@ -73,7 +59,7 @@ def onkey(event):
     if event.key=='q':
         print('現在の画像を終了します')
         if data :
-            with open('./GetPoint.csv', 'a') as f:
+            with open('./Getpoint.csv', 'a') as f:
                 writer = csv.writer(f)
                 for i in data:
                     writer.writerow(i)   

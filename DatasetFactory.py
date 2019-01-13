@@ -1,5 +1,5 @@
-# coding: utf-8
-# Union.pyを使って、データセットを作成します。
+# coding:utf-8
+#Union.pyを使って、データセットを作成します。
 from Union  import *
 import glob
 from PIL import Image
@@ -65,8 +65,7 @@ def main(_):
     
 #DetasetFactoryの設定ファイル読み込み
     config=csv_read(CONFIG,"utf-8")
-    config_rows={row[0]:row[1:] for row in config[1:]}
-    
+    config_rows={row[0]:{config[0][i]:row[i] for i in range(1,len(row))} for row in config[1:]}
 
 #処理
     cnt=0
@@ -88,17 +87,11 @@ def main(_):
             image_w,image_h=img.size
 
             if os.path.basename(image) in config_rows:
-                SharpBackground,SepiaAll,Brightness_mode,Extraction_mode, \
-                dilate,erode,angle,R,G,B,Threshold,brightness,BilateralFilter, \
-                GausianFilter,HideNum,x1_Ho,y1_Ho,x2_Ho,y2_Ho,x3_Ho,y3_Ho,x4_Ho,y4_Ho, \
-                flips,amount,sp_ratio,mean,sigma,kernel=config_rows[os.path.basename(image)]
-
+                config_name=image
             else:
-                SharpBackground,SepiaAll,Brightness_mode,Extraction_mode, \
-                dilate,erode,angle,R,G,B,Threshold,brightness,BilateralFilter, \
-                GausianFilter,HideNum,x1_Ho,y1_Ho,x2_Ho,y2_Ho,x3_Ho,y3_Ho,x4_Ho,y4_Ho, \
-                flips,amount,sp_ratio,mean,sigma,kernel=config_rows["default"]
-
+                config_name="default"
+   		
+	    #print(config_name)         
             # print(kernel)
             #横幅のサイズを再設定(高さ自動で調整される)
             resize=-1*(-1*bak_w//RESIZE_RATE) #切り上げ割り算
@@ -149,25 +142,29 @@ def main(_):
                 bak=BACKGROUND_DIR+str(data[i][0]),tar=image,
                 X=X,Y=Y,
                 resize=tar_raito,
-                SharpBackground=bool(int(SharpBackground)),
-                SepiaAll=bool(int(SepiaAll)),
-                Brightness_mode=str(Brightness_mode),
-                Extraction_mode=str(Extraction_mode),
-                dilate=int(dilate),erode=int(erode),
-                angle=int(angle),
-                R=int(R),G=int(G),B=int(B),
-                Threshold=int(Threshold),
-                brightness=float(brightness),
-                BilateralFilter=int(BilateralFilter),
-                GausianFilter=int(GausianFilter),
-                HideNum=int(HideNum),
-                x1_Ho=int(x1_Ho),y1_Ho=int(y1_Ho),x2_Ho=int(x2_Ho),y2_Ho=int(y2_Ho),x3_Ho=int(x3_Ho),y3_Ho=int(y3_Ho),x4_Ho=int(x4_Ho),y4_Ho=int(y4_Ho),
-                flips=int(flips),
-                amount=float(amount),
-                sp_ratio=float(sp_ratio),
-                mean=int(mean),
-                sigma=int(sigma),
-                kernel=int(kernel)
+                SharpBackground=bool(int(config_rows[config_name]["SharpBackground"])),
+                SepiaAll=bool(int(config_rows[config_name]["SepiaAll"])),
+                Brightness_mode=str(config_rows[config_name]["Brightness_mode"]),
+                Extraction_mode=str(config_rows[config_name]["Extraction_mode"]),
+                dilate=int(config_rows[config_name]["dilate"]),erode=int(config_rows[config_name]["erode"]),
+                Random_rotation=bool(int(config_rows[config_name]["Random_rotation"])),
+                angle=int(config_rows[config_name]["angle"]),
+                R=int(config_rows[config_name]["R"]),G=int(config_rows[config_name]["G"]),B=int(config_rows[config_name]["B"]),
+                Threshold=int(config_rows[config_name]["Threshold"]),
+                brightness=float(config_rows[config_name]["brightness"]),
+                BilateralFilter=int(config_rows[config_name]["BilateralFilter"]),
+                GausianFilter=int(config_rows[config_name]["GausianFilter"]),
+                HideNum=int(config_rows[config_name]["HideNum"]),
+                x1_Ho=int(config_rows[config_name]["x1_Ho"]),y1_Ho=int(config_rows[config_name]["y1_Ho"]),
+                x2_Ho=int(config_rows[config_name]["x2_Ho"]),y2_Ho=int(config_rows[config_name]["y2_Ho"]),
+                x3_Ho=int(config_rows[config_name]["x3_Ho"]),y3_Ho=int(config_rows[config_name]["y3_Ho"]),
+                x4_Ho=int(config_rows[config_name]["x4_Ho"]),y4_Ho=int(config_rows[config_name]["y4_Ho"]),
+                flips=int(config_rows[config_name]["flips"]),
+                amount=float(config_rows[config_name]["amount"]),
+                sp_ratio=float(config_rows[config_name]["sp_ratio"]),
+                mean=int(config_rows[config_name]["mean"]),
+                sigma=int(config_rows[config_name]["sigma"]),
+                kernel=int(config_rows[config_name]["kernel"])
                 )
             #アノテーションファイルに記録
             with open(ANNOTATION_FILE,"a") as f:

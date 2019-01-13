@@ -1,1 +1,4 @@
 GetPoint.csv
+tmp/*.jpg
+tmp/*.png
+./dataset.csv

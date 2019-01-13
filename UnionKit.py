@@ -57,7 +57,7 @@ def Extraction(Extraction_mode=None,
               ):
     
     if(Extraction_mode=="Binary"):
-        print("Binary")
+        #print("Binary")
         #2値化による輪郭抽出
         th1=Binarize(Threshold,tar)
         MakeMask(th1,dilate,erode)
