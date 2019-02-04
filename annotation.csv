@@ -1,3 +1,186 @@
 label,minX,minY,maxX,maxY,path,file,name
-1,105,223,123,242,/home/kagamiwomiru/datasets/RoadPhoto/pref_11-0021.jpg,pref_11-0021.jpg,1
-2,104,244,126,265,/home/kagamiwomiru/datasets/RoadPhoto/pref_11-0021.jpg,pref_11-0021.jpg,2
+3,103,221,125,245,/home/kagamiwomiru/datasets/RoadPhoto/pref_11-0021.jpg,pref_11-0021.jpg,3
+14,102,244,127,266,/home/kagamiwomiru/datasets/RoadPhoto/pref_11-0021.jpg,pref_11-0021.jpg,14
+2,32,32,90,80,/home/kagamiwomiru/datasets/RoadPhoto/20181016raoundabout01.jpg,20181016raoundabout01.jpg,2
+2,521,106,563,143,/home/kagamiwomiru/datasets/RoadPhoto/20181016raoundabout01.jpg,20181016raoundabout01.jpg,2
+37,6,85,52,132,/home/kagamiwomiru/datasets/RoadPhoto/20181016raoundabout01.jpg,20181016raoundabout01.jpg,37
+3,187,196,215,218,/home/kagamiwomiru/datasets/RoadPhoto/RS=^ADBJ3I66xBtuF7CiyrpF6iaFYIx450-.jpg,RS=^ADBJ3I66xBtuF7CiyrpF6iaFYIx450-.jpg,3
+4,372,49,408,83,/home/kagamiwomiru/datasets/RoadPhoto/rect4.jpg,rect4.jpg,4
+12,310,134,332,157,/home/kagamiwomiru/datasets/RoadPhoto/rect4.jpg,rect4.jpg,12
+3,86,127,119,163,/home/kagamiwomiru/datasets/RoadPhoto/kounisiosima1.jpg,kounisiosima1.jpg,3
+14,103,198,119,214,/home/kagamiwomiru/datasets/RoadPhoto/kounisiosima1.jpg,kounisiosima1.jpg,14
+43,35,95,100,155,/home/kagamiwomiru/datasets/RoadPhoto/1200px-Japanese_Traffic_signs_in_Aichi_Pref_r-439_Toyooka.jpg,1200px-Japanese_Traffic_signs_in_Aichi_Pref_r-439_Toyooka.jpg,43
+21,287,97,333,137,/home/kagamiwomiru/datasets/RoadPhoto/gyakutenippou16-min.jpg,gyakutenippou16-min.jpg,21
+21,123,234,164,274,/home/kagamiwomiru/datasets/RoadPhoto/gyakutenippou16-min.jpg,gyakutenippou16-min.jpg,21
+14,143,204,180,240,/home/kagamiwomiru/datasets/RoadPhoto/gyakutenippou16-min.jpg,gyakutenippou16-min.jpg,14
+10,146,130,182,165,/home/kagamiwomiru/datasets/RoadPhoto/gyakutenippou16-min.jpg,gyakutenippou16-min.jpg,10
+26,131,295,151,332,/home/kagamiwomiru/datasets/RoadPhoto/gyakutenippou16-min.jpg,gyakutenippou16-min.jpg,26
+9,99,278,125,302,/home/kagamiwomiru/datasets/RoadPhoto/gyakutenippou16-min.jpg,gyakutenippou16-min.jpg,9
+3,282,139,324,177,/home/kagamiwomiru/datasets/RoadPhoto/pref_11-0303.jpg,pref_11-0303.jpg,3
+4,240,136,281,177,/home/kagamiwomiru/datasets/RoadPhoto/pref_11-0303.jpg,pref_11-0303.jpg,4
+3,172,152,202,182,/home/kagamiwomiru/datasets/RoadPhoto/450-201406070123236917.jpg,450-201406070123236917.jpg,3
+14,190,287,214,313,/home/kagamiwomiru/datasets/RoadPhoto/pref_12-0215.jpg,pref_12-0215.jpg,14
+26,148,260,188,284,/home/kagamiwomiru/datasets/RoadPhoto/RS=^ADB.8iCpCXLApwg16.8pkvkKAJc.jpg,RS=^ADB.8iCpCXLApwg16.8pkvkKAJc.jpg,26
+3,131,174,177,214,/home/kagamiwomiru/datasets/RoadPhoto/050625kushibiki2W1.jpg,050625kushibiki2W1.jpg,3
+12,130,103,175,151,/home/kagamiwomiru/datasets/RoadPhoto/050625kushibiki2W1.jpg,050625kushibiki2W1.jpg,12
+34,58,19,112,69,/home/kagamiwomiru/datasets/RoadPhoto/img_1.jpg,img_1.jpg,34
+34,179,18,233,71,/home/kagamiwomiru/datasets/RoadPhoto/img_1.jpg,img_1.jpg,34
+34,274,18,329,70,/home/kagamiwomiru/datasets/RoadPhoto/img_1.jpg,img_1.jpg,34
+34,477,29,531,67,/home/kagamiwomiru/datasets/RoadPhoto/img_1.jpg,img_1.jpg,34
+12,40,52,138,130,/home/kagamiwomiru/datasets/RoadPhoto/2412.jpg,2412.jpg,12
+3,40,129,141,217,/home/kagamiwomiru/datasets/RoadPhoto/2412.jpg,2412.jpg,3
+3,231,202,258,235,/home/kagamiwomiru/datasets/RoadPhoto/pref_01-1075.jpg,pref_01-1075.jpg,3
+3,187,68,214,97,/home/kagamiwomiru/datasets/RoadPhoto/higashimachi-higashi02.jpg,higashimachi-higashi02.jpg,3
+14,159,71,186,94,/home/kagamiwomiru/datasets/RoadPhoto/higashimachi-higashi02.jpg,higashimachi-higashi02.jpg,14
+14,250,27,277,50,/home/kagamiwomiru/datasets/RoadPhoto/a000810558_01.jpg,a000810558_01.jpg,14
+12,206,107,242,138,/home/kagamiwomiru/datasets/RoadPhoto/rect10.jpg,rect10.jpg,12
+12,161,253,183,273,/home/kagamiwomiru/datasets/RoadPhoto/rect3.jpg,rect3.jpg,12
+14,209,94,220,107,/home/kagamiwomiru/datasets/RoadPhoto/yjimage (14).jpg,yjimage (14).jpg,14
+14,102,138,128,168,/home/kagamiwomiru/datasets/RoadPhoto/PV2-005.jpg,PV2-005.jpg,14
+14,181,186,202,204,/home/kagamiwomiru/datasets/RoadPhoto/PV2-005.jpg,PV2-005.jpg,14
+12,33,157,64,187,/home/kagamiwomiru/datasets/RoadPhoto/PV2-005.jpg,PV2-005.jpg,12
+12,147,205,169,225,/home/kagamiwomiru/datasets/RoadPhoto/PV2-005.jpg,PV2-005.jpg,12
+19,179,0,258,77,/home/kagamiwomiru/datasets/RoadPhoto/pref_27-0170.jpg,pref_27-0170.jpg,19
+14,110,113,162,180,/home/kagamiwomiru/datasets/RoadPhoto/pref_39-0038.jpg,pref_39-0038.jpg,14
+12,167,209,197,243,/home/kagamiwomiru/datasets/RoadPhoto/pref_39-0038.jpg,pref_39-0038.jpg,12
+34,198,178,243,223,/home/kagamiwomiru/datasets/RoadPhoto/yjimage (5).jpg,yjimage (5).jpg,34
+34,254,179,292,222,/home/kagamiwomiru/datasets/RoadPhoto/yjimage (5).jpg,yjimage (5).jpg,34
+34,364,178,408,222,/home/kagamiwomiru/datasets/RoadPhoto/yjimage (5).jpg,yjimage (5).jpg,34
+34,489,182,534,228,/home/kagamiwomiru/datasets/RoadPhoto/yjimage (5).jpg,yjimage (5).jpg,34
+34,127,194,180,240,/home/kagamiwomiru/datasets/RoadPhoto/yjimage (5).jpg,yjimage (5).jpg,34
+12,194,0,263,50,/home/kagamiwomiru/datasets/RoadPhoto/yjimage (5).jpg,yjimage (5).jpg,12
+31,68,0,136,34,/home/kagamiwomiru/datasets/RoadPhoto/yjimage (5).jpg,yjimage (5).jpg,31
+44,127,131,169,167,/home/kagamiwomiru/datasets/RoadPhoto/7585edd8.jpg,7585edd8.jpg,44
+26,141,164,168,198,/home/kagamiwomiru/datasets/RoadPhoto/7585edd8.jpg,7585edd8.jpg,26
+2,86,180,111,203,/home/kagamiwomiru/datasets/RoadPhoto/7585edd8.jpg,7585edd8.jpg,2
+14,194,225,208,237,/home/kagamiwomiru/datasets/RoadPhoto/7585edd8.jpg,7585edd8.jpg,14
+44,131,131,177,164,/home/kagamiwomiru/datasets/RoadPhoto/rect14.jpg,rect14.jpg,44
+3,245,202,330,220,/home/kagamiwomiru/datasets/RoadPhoto/201342-b14.jpg,201342-b14.jpg,3
+14,191,220,250,276,/home/kagamiwomiru/datasets/RoadPhoto/201342-b14.jpg,201342-b14.jpg,14
+44,366,66,440,128,/home/kagamiwomiru/datasets/RoadPhoto/2053b.jpg,2053b.jpg,44
+3,173,161,202,206,/home/kagamiwomiru/datasets/RoadPhoto/2053b.jpg,2053b.jpg,3
+44,210,261,243,292,/home/kagamiwomiru/datasets/RoadPhoto/yjimage (7).jpg,yjimage (7).jpg,44
+44,146,326,182,354,/home/kagamiwomiru/datasets/RoadPhoto/yjimage (7).jpg,yjimage (7).jpg,44
+44,0,1,250,197,/home/kagamiwomiru/datasets/RoadPhoto/Root426_Kotobuki_Rotary_in_Toyooka_Hyogo.jpg,Root426_Kotobuki_Rotary_in_Toyooka_Hyogo.jpg,44
+44,217,164,254,203,/home/kagamiwomiru/datasets/RoadPhoto/Root426_Kotobuki_Rotary_in_Toyooka_Hyogo.jpg,Root426_Kotobuki_Rotary_in_Toyooka_Hyogo.jpg,44
+3,16,149,50,189,/home/kagamiwomiru/datasets/RoadPhoto/Root426_Kotobuki_Rotary_in_Toyooka_Hyogo.jpg,Root426_Kotobuki_Rotary_in_Toyooka_Hyogo.jpg,3
+14,12,190,52,225,/home/kagamiwomiru/datasets/RoadPhoto/Root426_Kotobuki_Rotary_in_Toyooka_Hyogo.jpg,Root426_Kotobuki_Rotary_in_Toyooka_Hyogo.jpg,14
+9,21,224,50,244,/home/kagamiwomiru/datasets/RoadPhoto/Root426_Kotobuki_Rotary_in_Toyooka_Hyogo.jpg,Root426_Kotobuki_Rotary_in_Toyooka_Hyogo.jpg,9
+12,146,238,168,259,/home/kagamiwomiru/datasets/RoadPhoto/Root426_Kotobuki_Rotary_in_Toyooka_Hyogo.jpg,Root426_Kotobuki_Rotary_in_Toyooka_Hyogo.jpg,12
+14,192,191,209,211,/home/kagamiwomiru/datasets/RoadPhoto/yjimage (2).jpg,yjimage (2).jpg,14
+3,192,172,211,189,/home/kagamiwomiru/datasets/RoadPhoto/yjimage (2).jpg,yjimage (2).jpg,3
+3,93,145,138,192,/home/kagamiwomiru/datasets/RoadPhoto/yjimage (4).jpg,yjimage (4).jpg,3
+43,32,95,99,155,/home/kagamiwomiru/datasets/RoadPhoto/yjimage (4).jpg,yjimage (4).jpg,43
+12,162,49,211,94,/home/kagamiwomiru/datasets/RoadPhoto/0929n.jpg,0929n.jpg,12
+25,16,120,88,189,/home/kagamiwomiru/datasets/RoadPhoto/rect9.jpg,rect9.jpg,25
+3,19,216,84,281,/home/kagamiwomiru/datasets/RoadPhoto/rect9.jpg,rect9.jpg,3
+44,177,17,232,65,/home/kagamiwomiru/datasets/RoadPhoto/rect8.jpg,rect8.jpg,44
+44,86,118,120,148,/home/kagamiwomiru/datasets/RoadPhoto/rect11.jpg,rect11.jpg,44
+2,44,120,60,163,/home/kagamiwomiru/datasets/RoadPhoto/rect11.jpg,rect11.jpg,2
+44,52,107,111,154,/home/kagamiwomiru/datasets/RoadPhoto/rect15.jpg,rect15.jpg,44
+2,199,87,261,153,/home/kagamiwomiru/datasets/RoadPhoto/240_F_239942535_2glkVm6t5GPPjCME3Jw6o6PGMqlD5fXy.jpg,240_F_239942535_2glkVm6t5GPPjCME3Jw6o6PGMqlD5fXy.jpg,2
+4,370,213,405,247,/home/kagamiwomiru/datasets/RoadPhoto/hqdefault.jpg,hqdefault.jpg,4
+14,374,243,405,275,/home/kagamiwomiru/datasets/RoadPhoto/hqdefault.jpg,hqdefault.jpg,14
+12,31,171,58,204,/home/kagamiwomiru/datasets/RoadPhoto/130728.jpg,130728.jpg,12
+3,220,35,265,85,/home/kagamiwomiru/datasets/RoadPhoto/pref_04-0033.jpg,pref_04-0033.jpg,3
+14,218,94,265,141,/home/kagamiwomiru/datasets/RoadPhoto/pref_04-0033.jpg,pref_04-0033.jpg,14
+8,285,0,384,82,/home/kagamiwomiru/datasets/RoadPhoto/evt18020215560026-p1.jpg,evt18020215560026-p1.jpg,8
+44,125,126,168,160,/home/kagamiwomiru/datasets/RoadPhoto/rect16.jpg,rect16.jpg,44
+12,166,141,205,184,/home/kagamiwomiru/datasets/RoadPhoto/pref_12-0020.jpg,pref_12-0020.jpg,12
+12,45,241,91,287,/home/kagamiwomiru/datasets/RoadPhoto/ot-176a.jpg,ot-176a.jpg,12
+44,132,16,230,103,/home/kagamiwomiru/datasets/RoadPhoto/img_2.jpg,img_2.jpg,44
+44,242,68,319,125,/home/kagamiwomiru/datasets/RoadPhoto/img_2.jpg,img_2.jpg,44
+44,284,104,342,149,/home/kagamiwomiru/datasets/RoadPhoto/img_2.jpg,img_2.jpg,44
+44,337,128,386,166,/home/kagamiwomiru/datasets/RoadPhoto/img_2.jpg,img_2.jpg,44
+44,380,145,422,174,/home/kagamiwomiru/datasets/RoadPhoto/img_2.jpg,img_2.jpg,44
+3,0,212,40,253,/home/kagamiwomiru/datasets/RoadPhoto/P8187986.jpg,P8187986.jpg,3
+16,81,234,112,261,/home/kagamiwomiru/datasets/RoadPhoto/201403kousoku_kannon-2.jpg,201403kousoku_kannon-2.jpg,16
+12,23,332,103,413,/home/kagamiwomiru/datasets/RoadPhoto/que-1084959075.jpg,que-1084959075.jpg,12
+14,26,419,103,494,/home/kagamiwomiru/datasets/RoadPhoto/que-1084959075.jpg,que-1084959075.jpg,14
+44,162,165,207,207,/home/kagamiwomiru/datasets/RoadPhoto/yjimage(15).jpg,yjimage(15).jpg,44
+12,63,258,89,282,/home/kagamiwomiru/datasets/RoadPhoto/yjimage(15).jpg,yjimage(15).jpg,12
+3,93,119,125,149,/home/kagamiwomiru/datasets/RoadPhoto/050625kushibiki2S1.jpg,050625kushibiki2S1.jpg,3
+12,90,150,128,180,/home/kagamiwomiru/datasets/RoadPhoto/050625kushibiki2S1.jpg,050625kushibiki2S1.jpg,12
+14,95,198,127,226,/home/kagamiwomiru/datasets/RoadPhoto/050625kushibiki2S1.jpg,050625kushibiki2S1.jpg,14
+12,520,103,571,157,/home/kagamiwomiru/datasets/RoadPhoto/skng145p0767.jpg,skng145p0767.jpg,12
+34,32,121,89,179,/home/kagamiwomiru/datasets/RoadPhoto/pref_09-0309.jpg,pref_09-0309.jpg,34
+34,174,121,235,184,/home/kagamiwomiru/datasets/RoadPhoto/pref_09-0309.jpg,pref_09-0309.jpg,34
+34,317,121,375,179,/home/kagamiwomiru/datasets/RoadPhoto/pref_09-0309.jpg,pref_09-0309.jpg,34
+34,508,122,570,180,/home/kagamiwomiru/datasets/RoadPhoto/pref_09-0309.jpg,pref_09-0309.jpg,34
+44,144,32,216,94,/home/kagamiwomiru/datasets/RoadPhoto/img_0.jpg,img_0.jpg,44
+44,313,111,355,134,/home/kagamiwomiru/datasets/RoadPhoto/img_0.jpg,img_0.jpg,44
+44,366,146,389,169,/home/kagamiwomiru/datasets/RoadPhoto/img_0.jpg,img_0.jpg,44
+44,405,159,423,177,/home/kagamiwomiru/datasets/RoadPhoto/img_0.jpg,img_0.jpg,44
+44,425,165,443,185,/home/kagamiwomiru/datasets/RoadPhoto/img_0.jpg,img_0.jpg,44
+44,443,175,455,186,/home/kagamiwomiru/datasets/RoadPhoto/img_0.jpg,img_0.jpg,44
+34,13,64,71,120,/home/kagamiwomiru/datasets/RoadPhoto/sty1608160001-f1.jpg,sty1608160001-f1.jpg,34
+34,60,99,118,141,/home/kagamiwomiru/datasets/RoadPhoto/sty1608160001-f1.jpg,sty1608160001-f1.jpg,34
+34,151,64,200,118,/home/kagamiwomiru/datasets/RoadPhoto/sty1608160001-f1.jpg,sty1608160001-f1.jpg,34
+34,166,97,225,140,/home/kagamiwomiru/datasets/RoadPhoto/sty1608160001-f1.jpg,sty1608160001-f1.jpg,34
+34,158,166,188,198,/home/kagamiwomiru/datasets/RoadPhoto/sty1608160001-f1.jpg,sty1608160001-f1.jpg,34
+34,215,168,243,196,/home/kagamiwomiru/datasets/RoadPhoto/sty1608160001-f1.jpg,sty1608160001-f1.jpg,34
+34,330,164,359,196,/home/kagamiwomiru/datasets/RoadPhoto/sty1608160001-f1.jpg,sty1608160001-f1.jpg,34
+34,388,60,442,120,/home/kagamiwomiru/datasets/RoadPhoto/sty1608160001-f1.jpg,sty1608160001-f1.jpg,34
+34,531,63,584,114,/home/kagamiwomiru/datasets/RoadPhoto/sty1608160001-f1.jpg,sty1608160001-f1.jpg,34
+34,489,100,545,140,/home/kagamiwomiru/datasets/RoadPhoto/sty1608160001-f1.jpg,sty1608160001-f1.jpg,34
+34,355,98,418,135,/home/kagamiwomiru/datasets/RoadPhoto/sty1608160001-f1.jpg,sty1608160001-f1.jpg,34
+34,396,167,422,195,/home/kagamiwomiru/datasets/RoadPhoto/sty1608160001-f1.jpg,sty1608160001-f1.jpg,34
+34,353,209,373,222,/home/kagamiwomiru/datasets/RoadPhoto/sty1608160001-f1.jpg,sty1608160001-f1.jpg,34
+34,314,207,330,224,/home/kagamiwomiru/datasets/RoadPhoto/sty1608160001-f1.jpg,sty1608160001-f1.jpg,34
+34,245,207,266,225,/home/kagamiwomiru/datasets/RoadPhoto/sty1608160001-f1.jpg,sty1608160001-f1.jpg,34
+34,141,209,159,227,/home/kagamiwomiru/datasets/RoadPhoto/sty1608160001-f1.jpg,sty1608160001-f1.jpg,34
+34,202,209,220,227,/home/kagamiwomiru/datasets/RoadPhoto/sty1608160001-f1.jpg,sty1608160001-f1.jpg,34
+2,561,168,581,190,/home/kagamiwomiru/datasets/RoadPhoto/sty1608160001-f1.jpg,sty1608160001-f1.jpg,2
+26,332,94,355,129,/home/kagamiwomiru/datasets/RoadPhoto/sty1608160001-f1.jpg,sty1608160001-f1.jpg,26
+15,243,91,278,121,/home/kagamiwomiru/datasets/RoadPhoto/sty1608160001-f1.jpg,sty1608160001-f1.jpg,15
+15,247,164,263,187,/home/kagamiwomiru/datasets/RoadPhoto/sty1608160001-f1.jpg,sty1608160001-f1.jpg,15
+14,189,134,218,164,/home/kagamiwomiru/datasets/RoadPhoto/yjimage(16).jpg,yjimage(16).jpg,14
+4,191,111,218,134,/home/kagamiwomiru/datasets/RoadPhoto/yjimage(16).jpg,yjimage(16).jpg,4
+3,191,72,217,100,/home/kagamiwomiru/datasets/RoadPhoto/yjimage(16).jpg,yjimage(16).jpg,3
+43,14,7,86,70,/home/kagamiwomiru/datasets/RoadPhoto/images.jpg,images.jpg,43
+8,537,96,564,122,/home/kagamiwomiru/datasets/RoadPhoto/yjimage (13).jpg,yjimage (13).jpg,8
+12,36,45,75,85,/home/kagamiwomiru/datasets/RoadPhoto/rect5.jpg,rect5.jpg,12
+3,325,30,374,80,/home/kagamiwomiru/datasets/RoadPhoto/images (1).jpg,images (1).jpg,3
+14,259,30,319,83,/home/kagamiwomiru/datasets/RoadPhoto/images (1).jpg,images (1).jpg,14
+12,108,102,156,147,/home/kagamiwomiru/datasets/RoadPhoto/kanjyokousa02.jpg,kanjyokousa02.jpg,12
+44,105,46,166,100,/home/kagamiwomiru/datasets/RoadPhoto/kanjyokousa02.jpg,kanjyokousa02.jpg,44
+12,227,5,289,60,/home/kagamiwomiru/datasets/RoadPhoto/kitaterao_kousaten_r.jpg,kitaterao_kousaten_r.jpg,12
+12,218,235,235,249,/home/kagamiwomiru/datasets/RoadPhoto/kitaterao_kousaten_r.jpg,kitaterao_kousaten_r.jpg,12
+14,441,73,472,105,/home/kagamiwomiru/datasets/RoadPhoto/pref_41-0246.jpg,pref_41-0246.jpg,14
+3,405,73,435,105,/home/kagamiwomiru/datasets/RoadPhoto/pref_41-0246.jpg,pref_41-0246.jpg,3
+14,212,106,233,129,/home/kagamiwomiru/datasets/RoadPhoto/DU31yzWV4AAPUma.jpg,DU31yzWV4AAPUma.jpg,14
+12,163,150,194,175,/home/kagamiwomiru/datasets/RoadPhoto/050625kushibiki2E1.jpg,050625kushibiki2E1.jpg,12
+12,261,164,279,185,/home/kagamiwomiru/datasets/RoadPhoto/rect7.jpg,rect7.jpg,12
+12,336,181,373,218,/home/kagamiwomiru/datasets/RoadPhoto/pref_45-0031.jpg,pref_45-0031.jpg,12
+26,318,250,341,267,/home/kagamiwomiru/datasets/RoadPhoto/pref_45-0031.jpg,pref_45-0031.jpg,26
+14,425,256,450,285,/home/kagamiwomiru/datasets/RoadPhoto/pref_45-0031.jpg,pref_45-0031.jpg,14
+4,289,218,309,245,/home/kagamiwomiru/datasets/RoadPhoto/pref_45-0031.jpg,pref_45-0031.jpg,4
+44,88,141,123,171,/home/kagamiwomiru/datasets/RoadPhoto/yjimage (10).jpg,yjimage (10).jpg,44
+3,163,114,231,179,/home/kagamiwomiru/datasets/RoadPhoto/pref_14-0203.jpg,pref_14-0203.jpg,3
+12,269,225,303,258,/home/kagamiwomiru/datasets/RoadPhoto/pref_14-0203.jpg,pref_14-0203.jpg,12
+4,161,49,229,108,/home/kagamiwomiru/datasets/RoadPhoto/pref_14-0203.jpg,pref_14-0203.jpg,4
+21,498,55,551,111,/home/kagamiwomiru/datasets/RoadPhoto/yjimage (8).jpg,yjimage (8).jpg,21
+21,124,94,152,127,/home/kagamiwomiru/datasets/RoadPhoto/yjimage (8).jpg,yjimage (8).jpg,21
+3,242,236,274,267,/home/kagamiwomiru/datasets/RoadPhoto/pref_33-0026.jpg,pref_33-0026.jpg,3
+14,241,278,275,308,/home/kagamiwomiru/datasets/RoadPhoto/pref_33-0026.jpg,pref_33-0026.jpg,14
+14,137,227,155,253,/home/kagamiwomiru/datasets/RoadPhoto/yjimage (9).jpg,yjimage (9).jpg,14
+14,382,134,408,162,/home/kagamiwomiru/datasets/RoadPhoto/pref_03-0129.jpg,pref_03-0129.jpg,14
+3,384,107,404,131,/home/kagamiwomiru/datasets/RoadPhoto/pref_03-0129.jpg,pref_03-0129.jpg,3
+14,169,167,186,184,/home/kagamiwomiru/datasets/RoadPhoto/smile.jpg,smile.jpg,14
+3,172,153,187,164,/home/kagamiwomiru/datasets/RoadPhoto/smile.jpg,smile.jpg,3
+13,196,158,224,186,/home/kagamiwomiru/datasets/RoadPhoto/yjimage (11).jpg,yjimage (11).jpg,13
+3,273,158,300,186,/home/kagamiwomiru/datasets/RoadPhoto/yjimage (11).jpg,yjimage (11).jpg,3
+3,140,241,177,272,/home/kagamiwomiru/datasets/RoadPhoto/tkb_4.jpg,tkb_4.jpg,3
+4,142,288,175,321,/home/kagamiwomiru/datasets/RoadPhoto/tkb_4.jpg,tkb_4.jpg,4
+14,139,333,178,371,/home/kagamiwomiru/datasets/RoadPhoto/tkb_4.jpg,tkb_4.jpg,14
+3,235,128,266,160,/home/kagamiwomiru/datasets/RoadPhoto/PICT00151_1.jpg,PICT00151_1.jpg,3
+8,118,163,161,206,/home/kagamiwomiru/datasets/RoadPhoto/koukeihankokudo1.jpg,koukeihankokudo1.jpg,8
+14,112,214,155,262,/home/kagamiwomiru/datasets/RoadPhoto/koukeihankokudo1.jpg,koukeihankokudo1.jpg,14
+3,278,142,303,173,/home/kagamiwomiru/datasets/RoadPhoto/koukeihankokudo1.jpg,koukeihankokudo1.jpg,3
+3,41,2,106,65,/home/kagamiwomiru/datasets/RoadPhoto/DSC09376-716bd.jpg,DSC09376-716bd.jpg,3
+3,259,185,287,215,/home/kagamiwomiru/datasets/RoadPhoto/DSC09376-716bd.jpg,DSC09376-716bd.jpg,3
+14,4,2,35,71,/home/kagamiwomiru/datasets/RoadPhoto/DSC09376-716bd.jpg,DSC09376-716bd.jpg,14
+14,222,186,250,214,/home/kagamiwomiru/datasets/RoadPhoto/DSC09376-716bd.jpg,DSC09376-716bd.jpg,14
+43,75,68,140,123,/home/kagamiwomiru/datasets/RoadPhoto/CCUCVjWUkAE7fR1.jpg,CCUCVjWUkAE7fR1.jpg,43
+14,62,105,95,136,/home/kagamiwomiru/datasets/RoadPhoto/CCUCVjWUkAE7fR1.jpg,CCUCVjWUkAE7fR1.jpg,14
+12,91,136,133,175,/home/kagamiwomiru/datasets/RoadPhoto/CCUCVjWUkAE7fR1.jpg,CCUCVjWUkAE7fR1.jpg,12
