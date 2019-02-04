@@ -29,6 +29,7 @@ import cv2
 #mean : ガウシアンフィルタにおける平均
 #sigma : ガウシアンフィルタにおける分散
 #kernel : 量子化するときのくくりの数値(つまりは何色で表示にするか)
+#perspective : 中心にいくほどどれだけ縮小させるか(例:perspectiveが2ならば1/2まで縮小)
 
 def Union(label_name="?",
          bak=None,
@@ -54,7 +55,8 @@ def Union(label_name="?",
          sp_ratio=0.5,
          mean=0,
          sigma=0,
-         kernel=-1
+         kernel=-1,
+	 perspective=2
          ):
     
     if(SharpBackground is True):
@@ -95,7 +97,7 @@ def Union(label_name="?",
 
     #アフィン回転(ランダムで回転させるか)
     if Random_rotation:
-        target=Affine(target,random.randint(0,360))
+        target=Affine(target,random.randint(0,359))
     else:
         target=Affine(target,angle)
 
@@ -128,7 +130,17 @@ def Union(label_name="?",
     target=cv2.resize(target,(int(tar_w*resize),int(tar_h*resize)))
     cv2.imwrite("./tmp/tmp.png",target)
     tar_h,tar_w,_=target.shape[:3]
+    
+    #遠近による大きさの変化
+    if perspective>1:
+    	target=Perspective(tar=cv2.imread("./tmp/tmp.png",-1),bak=background,x=X,y=Y,perspective=perspective)
+    	cv2.imwrite("./tmp/tmp.png",target)
+    	tar_h,tar_w,_=target.shape[:3] 
 
+    #背景に溶け込ませる
+    target=Nature_Target(tar=cv2.imread("./tmp/tmp.png",-1),bak=background,x=X,y=Y)
+    cv2.imwrite("./tmp/tmp.png",target)
+    
 
     #OpenCVで明度変換
     if (Brightness_mode == "OpenCV"): 

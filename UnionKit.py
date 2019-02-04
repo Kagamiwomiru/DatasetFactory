@@ -351,3 +351,81 @@ def cluster(tar=None,kernel=256):
     result = result.reshape((tar.shape))
     return result
 
+
+# 背景となじませる処理
+def Nature_Target(tar=None,bak=None,x=0,y=0):
+    tar_h,tar_w,_=tar.shape[:3]
+    _,_,_,alpha=cv2.split(tar)
+    bak=np.asarray(bak)
+    bak_h,bak_w,_=bak.shape[:3]
+
+    width=x+tar_w
+
+    height=y+tar_h
+
+    #print("%d  %d  %d  %d"%(x,y,width,height))
+    bak=bak[y:height,x:width]
+    bak = cv2.cvtColor(bak,cv2.COLOR_BGR2HSV)
+    h_bak,s_bak,v_bak=cv2.split(bak)
+  
+    mean=int(np.mean(v_bak))
+    
+    tar=cv2.cvtColor(tar, cv2.COLOR_BGR2HSV)
+    h_tar,s_tar,v_tar=cv2.split(tar)
+    v_mean=np.full((tar_h,tar_w),mean,'uint8')
+    v_mean=v_tar//2+v_mean//2
+    
+    tar=cv2.merge([h_tar,s_tar,v_mean])
+    tar=cv2.cvtColor(tar, cv2.COLOR_HSV2BGR)
+    tar=cv2.merge([tar,alpha])
+    
+    return tar
+
+def Perspective_Color(tar=None,bak=None,rate=0,max_rate=0):
+    #bak=np.asarray(bak)
+    tar_h,tar_w,_=tar.shape[:3]
+    bak=cv2.resize(bak,(tar_w,tar_h))
+    bak=cluster(tar=bak,kernel=1)
+
+    b,g,r,a=cv2.split(tar)
+    tar=cv2.merge([b,g,r])
+    beta=(rate/max_rate-0.5)/1.3
+    alpha=1-beta
+    tar=cv2.addWeighted(src1=tar,alpha=alpha,src2=bak,beta=beta,gamma=0)
+    tar=cv2.merge([tar,a])
+    return tar
+
+def Perspective(tar=None,bak=None,x=0,y=0,perspective=0):
+    if x<=0 and y<=0:
+	return tar
+    #random.seed()		
+    bak=np.asarray(bak)
+    bak_h,bak_w,_=bak.shape[:3]
+    tar_h,tar_w,_=tar.shape[:3]
+    #print(perspective)
+    if x>=bak_w/2:
+	rate=(bak_w-x)*(perspective-1)+(bak_w/2)
+    else:
+	rate=x*(perspective-1)+(bak_w/2)
+    
+    resize_rate=random.uniform(1,(rate/(bak_w/2.0)))
+    #print(resize_rate)
+    tar=cv2.resize(tar,(int(tar_h/resize_rate),int(tar_w/resize_rate)))
+    tar=Perspective_Color(tar=tar,bak=bak,rate=resize_rate,max_rate=perspective)
+    return tar
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
