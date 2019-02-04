@@ -4,59 +4,61 @@
 from UnionKit import *
 import csv
 import cv2
-import sys
 
-# bak：背景画像
-# tar：前景画像（ターゲット）
-# これより下の引数は省略できます。
-# SharpBackground：背景を鮮鋭化するか
-# Brightness_mode：明るさを変更する方法を選択(No,PIL,OpenCV)
-# Extraction_mode : 前景抽出方法を選択(No,Color,Binary)
-# dilate,erode：クロージング時の拡大率と縮小率
-# X,Y：前景画像の貼り付け位置（途中の処理で前景画像をリサイズするのでその後の貼り付け位置）
-# Random_rotation : 画像をランダムで回転させるか
-# resize：前景画像を倍数指定でリサイズします
-# R,G,B：切り抜かれる色を指定(0〜255）
-# Threshold：２値化のの際の閾値（輪郭抽出）
-# brightness：明るさ。
-# BilateralFilter：バイラテラルフィルタ
-# GausianFilter：ガウシアンフィルタ
-# HideNum：遮蔽物の数
-# x1_Ho,y1_Ho,x2_Ho,y2_Ho=,x3_Ho,y3_Ho,x4_Ho,y4_Ho：射影変換。
-# flips : 反転(0:上下反転, 1:左右反転, -1:上下左右反転)
-# amount : ソルト&ペッパにおける画像の中のノイズの割合
-# sp_ratio : ソルト&ペッパの塩と胡椒の割合
-# mean : ガウシアンフィルタにおける平均
-# sigma : ガウシアンフィルタにおける分散
-# kernel : 量子化するときのくくりの数値(つまりは何色で表示にするか)
+
+#bak：背景画像
+#tar：前景画像（ターゲット）
+#これより下の引数は省略できます。
+#SharpBackground：背景を鮮鋭化するか
+#Brightness_mode：明るさを変更する方法を選択(No,PIL,OpenCV)
+#Extraction_mode : 前景抽出方法を選択(No,Color,Binary)
+#dilate,erode：クロージング時の拡大率と縮小率
+#X,Y：前景画像の貼り付け位置（途中の処理で前景画像をリサイズするのでその後の貼り付け位置）
+#Random_rotation : 画像をランダムで回転させるか
+#resize：前景画像を倍数指定でリサイズします
+#R,G,B：切り抜かれる色を指定(0〜255）
+#Threshold：２値化のの際の閾値（輪郭抽出）
+#brightness：明るさ。
+#BilateralFilter：バイラテラルフィルタ
+#GausianFilter：ガウシアンフィルタ
+#HideNum：遮蔽物の数
+#x1_Ho,y1_Ho,x2_Ho,y2_Ho=,x3_Ho,y3_Ho,x4_Ho,y4_Ho：射影変換。
+#flips : 反転(0:上下反転, 1:左右反転, -1:上下左右反転)
+#amount : ソルト&ペッパにおける画像の中のノイズの割合
+#sp_ratio : ソルト&ペッパの塩と胡椒の割合
+#mean : ガウシアンフィルタにおける平均
+#sigma : ガウシアンフィルタにおける分散
+#kernel : 量子化するときのくくりの数値(つまりは何色で表示にするか)
+#perspective : 中心にいくほどどれだけ縮小させるか(例:perspectiveが2ならば1/2まで縮小)
 
 def Union(label_name="?",
-          bak=None,
-          tar=None,
-          SharpBackground=False,
-          SepiaAll=False,
-          Brightness_mode="No",
-          Extraction_mode="No",
-          dilate=0, erode=0,
-          X=0, Y=0,
-          Random_rotation=False,
-          angle=0,
-          resize=1,
-          R=248, G=248, B=248,
-          Threshold=200,
-          brightness=1.0,
-          BilateralFilter=1,
-          GausianFilter=1,
-          HideNum=0,
-          x1_Ho=0, y1_Ho=0, x2_Ho=0, y2_Ho=0, x3_Ho=0, y3_Ho=0, x4_Ho=0, y4_Ho=0,
-          flips=2,
-          amount=0.,
-          sp_ratio=0.5,
-          mean=0,
-          sigma=0,
-          kernel=-1
-          ):
-
+         bak=None,
+         tar=None,
+         SharpBackground=False,
+         SepiaAll=False,
+         Brightness_mode="No",
+         Extraction_mode="No",
+         dilate=0,erode=0,
+         X=0,Y=0,
+         Random_rotation=False,
+         angle=0,
+         resize=1,
+         R=248,G=248,B=248,
+         Threshold=200,
+         brightness=1.0,
+         BilateralFilter=1,
+         GausianFilter=1,
+         HideNum=0,
+         x1_Ho=0,y1_Ho=0,x2_Ho=0,y2_Ho=0,x3_Ho=0,y3_Ho=0,x4_Ho=0,y4_Ho=0,
+         flips=2,
+         amount=0.,
+         sp_ratio=0.5,
+         mean=0,
+         sigma=0,
+         kernel=-1,
+	 perspective=2
+         ):
+    
     if(SharpBackground is True):
         # 背景画像の鮮鋭化
         cv2.imwrite("./tmp/background.jpg", Sharp(cv2.imread(bak)))
@@ -94,7 +96,7 @@ def Union(label_name="?",
 
     # アフィン回転(ランダムで回転させるか)
     if Random_rotation:
-        target = Affine(target, random.randint(0, 360))
+        target=Affine(target,random.randint(0,359))
     else:
         target = Affine(target, angle)
 
@@ -121,12 +123,23 @@ def Union(label_name="?",
     tar_h, tar_w, _ = target.shape[:3]
 
     # リサイズ
-    # tar_raito=float(resize)/org_w
-
+    # tar_raito=float(resize)/org_w 
+    
     # target=cv2.resize(target,(resize,int(tar_h*tar_raito)))
-    target = cv2.resize(target, (int(tar_w*resize), int(tar_h*resize)))
-    cv2.imwrite("./tmp/tmp.png", target)
-    tar_h, tar_w, _ = target.shape[:3]
+    target=cv2.resize(target,(int(tar_w*resize),int(tar_h*resize)))
+    cv2.imwrite("./tmp/tmp.png",target)
+    tar_h,tar_w,_=target.shape[:3]
+    
+    #遠近による大きさの変化
+    if perspective>1:
+    	target=Perspective(tar=cv2.imread("./tmp/tmp.png",-1),bak=background,x=X,y=Y,perspective=perspective)
+    	cv2.imwrite("./tmp/tmp.png",target)
+    	tar_h,tar_w,_=target.shape[:3] 
+
+    #背景に溶け込ませる
+    target=Nature_Target(tar=cv2.imread("./tmp/tmp.png",-1),bak=background,x=X,y=Y)
+    cv2.imwrite("./tmp/tmp.png",target)
+    
 
     # OpenCVで明度変換
     if (Brightness_mode == "OpenCV"):
