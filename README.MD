@@ -1,7 +1,8 @@
 # DatasetFactory
 DatasetFactoryは前景画像と背景画像を合成することで画像枚数を増やすためのデータセット作成ツールです。<br>
 このツールは **Tensoflow_Object_Detection_API** で使用できることを確認しました。 
-<br><br>
+
+
 
 # TODO
 - 画像処理を加えてから合成する際の精度について比較
@@ -129,6 +130,34 @@ python DatasetFactory.py --Background_dir=./Background/ \
 | id | xmin | ymin | xmax | ymax |file_path | filename | class |
 ```
 <br>
+
+## 3.Label_Image.py 
+
+### 実行方法
+```shell
+python Label_Image.py 画像があるディレクトリ -O[--output] 出力先ファイルパス(デフォルト./annotation.csv)
+
+# -hでヘルプが表示されます。
+```
+実行すると指定したディレクトリ内の画像は横幅600pxに縦横比率を維持したままリサイズされます。また、下のウインドウが表示されます。<br>
+![./docs_imgs/out1.png](./docs_imgs/out1.png)
+
+テキストボックス「Label」に画像のラベルIDを入力します。
+
+次に画像内をクリックし、配置したい範囲までドラッグすることで下の画像のように四角で表示されます。<br>
+![./docs_imgs/out2.png](./docs_imgs/out2.png)
+
+**Eキー**で指定した範囲の座標, ラベル名を確定します。画像内に別のオブジェクトが存在した場合は上記手順をくり返します。
+
+**Qキー**でデータを以下の形式でcsvファイルに保存し, 次の画像を表示します。
+
+```
+| LabelID | xmin | ymin | xmax | ymax | 画像ファイルの絶対パス | ファイル名 | 物体の名前 |
+```
+
+ヒント１：物体が小さすぎて範囲選択が困難である場合は、虫眼鏡ボタンを押下した後、範囲指定することで拡大できます。
+
+ヒント２:ラベルIDと物体の名前は同じものが入りますが、Label_Image.pyのテキストボックス描写部分とeキー押下の処理部分を書き換えると別の文字を入れることができます。
 
 # Union.pyを単体で使用する場合
 ## Union関数
